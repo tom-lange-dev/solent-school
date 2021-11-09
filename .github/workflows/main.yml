@@ -45,7 +45,7 @@ jobs:
           host: ${{ secrets.AZURE_HOSTNAME }}
           username: ${{ secrets.AZURE_USERNAME }}
           key: ${{ secrets.AZURE_KEY }}
-          port: 22
+          port: 22 
           script: |
             docker stop $(docker ps -a -q)
             USER_CONTAINER=ghcr.io/${{ github.repository_owner }}/user-example:v0.0.1 docker-compose -f /tmp/docker-compose.yml up -d 
