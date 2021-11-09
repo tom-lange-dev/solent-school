@@ -22,7 +22,7 @@ jobs:
           server: '${{ secrets.AZURE_HOSTNAME }}'
           ssh_private_key: '${{ secrets.AZURE_KEY }}'
           local_path: './experimental/user-project/user-example/docker/docker-compose.yml'
-          remote_path: '/etc/devops/docker/docker-compose.yml'
+          remote_path: '/tmp/devops/docker/docker-compose.yml'
           
       - name: "Run Compose on Azure"
         uses: appleboy/ssh-action@master
@@ -33,5 +33,5 @@ jobs:
           port: 22 
           script: |
             docker stop $(docker ps -a -q)
-            USER_CONTAINER=${{ github.event.client_payload.image }} docker-compose -f /etc/devops/docker/docker-compose.yml up -d   
+            USER_CONTAINER=${{ github.event.client_payload.image }} docker-compose -f /tmp/devops/docker/docker-compose.yml up -d   
       
