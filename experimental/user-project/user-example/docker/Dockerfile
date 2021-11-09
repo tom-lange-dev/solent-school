@@ -6,5 +6,6 @@ LABEL maintainer="craig.gallen@solent.ac.uk"
 ADD ./target/project-web /usr/local/tomcat/webapps/project-web
 
 EXPOSE 8080
+EXPOSE 81
 
 CMD ["catalina.sh", "run"]
