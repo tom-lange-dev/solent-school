@@ -6,7 +6,7 @@ services:
     restart: unless-stopped
     ports:
       - '80:80'
-      - '81:81'
+      - '8080:81'
       - '443:443'
     volumes:
       - /tmp/devops/data:/data
@@ -16,7 +16,7 @@ services:
   user-example:
     image: ${USER_CONTAINER}
     ports:
-      - "8080:8080"
+      - "8090:8080"
     volumes:
       - user-example-logs:/usr/local/tomcat/logs
 
