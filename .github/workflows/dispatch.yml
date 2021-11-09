@@ -1,7 +1,8 @@
 name: Test dispatch
-on: 
-    repository_dispatch:
-        types: [deploy]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
     build-and-deploy:
