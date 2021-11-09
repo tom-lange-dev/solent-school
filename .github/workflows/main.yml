@@ -1,9 +1,9 @@
 name: Test-Workflow
 
 on:
-  push:
-    branches:
-      - test
+  release:
+    types: [published]
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
