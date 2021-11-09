@@ -33,7 +33,7 @@ jobs:
       - name: Send dispatch to Repository
         uses: peter-evans/repository-dispatch@v1
         with:
-          token: ${{ secrets.REPO_TOKEN }}
+          token: ${{ secrets.TOKEN }}
           repository:  tom-lange-dev/solent-university 
           event-type: deploy
           client-payload: '{"image": "ghcr.io/${{ github.repository_owner }}/user-example:v0.0.1"}'
