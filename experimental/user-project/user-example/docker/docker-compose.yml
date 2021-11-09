@@ -9,8 +9,8 @@ services:
       - '8080:81'
       - '443:443'
     volumes:
-      - /etc/devops/data:/data
-      - /etc/devops/letsencrypt:/etc/letsencrypt
+      - /tmp/devops/data:/data
+      - /tmp/devops/letsencrypt:/etc/letsencrypt
 
       
   user-example:
