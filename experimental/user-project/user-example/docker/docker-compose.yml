@@ -1,17 +1,17 @@
 version: "3.9"
 services:
 
-  nginx:
+  app:
     image: 'jc21/nginx-proxy-manager:latest'
     restart: unless-stopped
-    container_name: nginx_proxy
-    volumes:
-      - /etc/devops/nginx/nginx.conf:/etc/nginx/nginx.conf
-      - /etc/letsencrypt/:/etc/letsencrypt
     ports:
-      - 80:80
-      - 81:81
-      - 443:443
+      - '80:80'
+      - '8080:81'
+      - '443:443'
+    volumes:
+      - /etc/devops/data:/data
+      - /etc/devops/letsencrypt:/etc/letsencrypt
+
       
   user-example:
     image: ${USER_CONTAINER}
