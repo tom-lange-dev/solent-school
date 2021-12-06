@@ -21,7 +21,7 @@ jobs:
           username: '${{ secrets.AZURE_USERNAME }}'
           server: '${{ secrets.AZURE_HOSTNAME }}'
           ssh_private_key: '${{ secrets.AZURE_KEY }}'
-          local_path: './experimental/user-project/user-example/docker/docker-compose.yml'
+          local_path: './experimental/order-project/order-example/docker/docker-compose-simple/docker-compose.yml'
           remote_path: '/tmp/devops/docker/docker-compose.yml'
           
       - name: "Run Compose on Azure"
