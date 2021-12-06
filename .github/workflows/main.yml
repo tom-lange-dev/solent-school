@@ -24,11 +24,11 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           
       - name: Build with Maven
-        working-directory: ./experimental/user-project/user-example/
+        working-directory: ./experimental/order-project/order-example
         run: | 
           mvn -B --update-snapshots package -P packageAsDocker
-          docker build ./docker -f ./docker/Dockerfile -t ghcr.io/${{ github.repository_owner }}/user-example:v0.0.1
-          docker push ghcr.io/${{ github.repository_owner }}/user-example:v0.0.1
+          docker build ./docker -f ./docker/Dockerfile -t ghcr.io/${{ github.repository_owner }}/order-example:v0.0.1
+          docker push ghcr.io/${{ github.repository_owner }}/order-example:v0.0.1
           
       - name: Send dispatch to Repository
         uses: peter-evans/repository-dispatch@v1
@@ -36,4 +36,4 @@ jobs:
           token: ${{ secrets.TOKEN }}
           repository:  tom-lange-dev/solent-university 
           event-type: deploy
-          client-payload: '{"image": "ghcr.io/${{ github.repository_owner }}/user-example:v0.0.1"}'
+          client-payload: '{"image": "ghcr.io/${{ github.repository_owner }}/order-example:v0.0.1"}'
