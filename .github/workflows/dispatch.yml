@@ -33,5 +33,5 @@ jobs:
           port: 22 
           script: |
             docker stop $(docker ps -a -q)
-            USER_CONTAINER=${{ github.event.client_payload.image }} docker-compose -f devel/gitrepos/IntegrationA/docker/docker-compose.yml up -d   
+            USER_CONTAINER=${{ github.event.client_payload.image }} docker-compose -f /home/devops1/devel/gitrepos/IntegrationA/docker/docker-compose.yml up -d   
       
